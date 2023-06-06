@@ -1,0 +1,18 @@
+.example-card {
+  width: 1100px;
+}
+.example-header-image {
+  background-image: url('https://th.bing.com/th?id=OIP.fFraA3v44k-Ulx9js7fUigHaFj&w=288&h=216&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2');
+  background-size: cover;
+}
+.example-button-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+div {
+  margin: 10px;
+  padding: 0.1%;
+  display: inline-block;
+  resize: both;
+}

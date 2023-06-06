@@ -1,0 +1,103 @@
+<!-- <table border="2px">
+    <tr>
+      <th>RealEstate Id</th>
+      <th>Property Type</th>
+      <th>Name</th>
+      <th>Location</th>
+      <th>Current Price</th>
+      <th>Previous Price</th>    
+    </tr>
+    <tr *ngFor="let realestate of realEstate">
+      <td>{{realestate.realEstateId}}</td>
+      <td>{{realestate.propertyType}}</td>
+      <td>{{realestate.name}}</td>
+      <td>{{realestate.location}}</td>
+      <td>{{realestate.currentPrice}}</td>
+      <td>{{realestate.previousPrice}}</td>
+      <td>
+        <button mat-raised-button color="primary" (click)="inputDisplay()" [disabled]="isButtonDisabled"> Buy</button>
+        <!-- <button mat-raised-button color="primary" >Sell</button> -->
+    <!-- </td>
+    </tr>
+    
+</table> --> -->
+
+
+
+ <!-- <div align="right">
+   <select>
+    <option selected>All</option>
+    <option >Equity</option>
+    <option>Debt</option>
+    <option>Hybrid</option>
+  </select> -->
+  <!-- <input type="text" [(ngModel)]="searchTerm" (ngModelChange)="search()"> -->
+ <!-- </div>
+ <br>
+<table border="2px">
+    <tr>
+      <th> Mutual Fund Id</th>
+      <th>Fund Name</th>
+      <th>Type of Fund</th>
+      <th>Open Date</th>
+      <th>Close Date</th>
+      <th>Minimum Investment</th>
+      <th>Category</th>
+      
+    </tr>
+    <tr *ngFor="let fund of mutualFund">
+      <td> {{fund.mutualFundId}} </td>
+      <td>{{fund.schemeName}}</td>
+      <td>{{fund.type}}</td> 
+      <td> {{fund.openDate}} </td>
+      <td> {{fund.closeDate}} </td>
+      <td> {{fund.amount}} </td>
+      <td> {{fund.category}} </td>
+      <td>
+        <button mat-raised-button color="primary" (click)="inputBuyDisplay()"> Buy</button>
+        <button mat-raised-button color="primary" (click)="inputSellDisplay()" [disabled]="isButtonDisabled">Sell</button>
+    </td>
+    </tr> -->
+    
+<!-- </table> --> 
+
+<div *ngFor= "let realestate of realEstate">
+  <mat-card class="example-card" >
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{realestate.name}}</mat-card-title>
+      <mat-card-subtitle>{{realestate.propertyType}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <div>
+        RealEstate Id: {{realestate.realEstateId}}
+      </div>
+      <!-- <div>
+        An equity fund is a mutual fund that invests principally.It can be actively or passively (index fund)managed.
+      </div>  -->
+      <div style="display: flex; justify-content: space-between;">
+        <p style="flex-basis: 49.5%; ">Location</p>
+        <p style="flex-basis: 49.5%; ">{{realestate.location}}</p>
+        <!-- 49.5% + 49.5% = 99%, remaining 1% is distributed according to justify-content -->
+      </div>
+      <div style="display: flex; justify-content: space-between;">
+        <p style="flex-basis: 49.5%; ">Current Price</p>
+        <p style="flex-basis: 49.5%; ">{{realestate.currentPrice}}</p>
+        <!-- 49.5% + 49.5% = 99%, remaining 1% is distributed according to justify-content -->
+      </div>
+      <div style="display: flex; justify-content: space-between;">
+        <p style="flex-basis: 49.5%; ">Previous Price</p>
+        <p style="flex-basis: 49.5%; ">{{realestate.previousPrice}}</p>
+        <!-- 49.5% + 49.5% = 99%, remaining 1% is distributed according to justify-content -->
+      </div>
+    
+     
+    </mat-card-content>
+    
+    <mat-card-actions>
+      
+      &nbsp;&nbsp;<button mat-raised-button color="primary" (click)="changeVolume()">Invest</button>
+    </mat-card-actions>
+    
+  </mat-card>
+  </div>

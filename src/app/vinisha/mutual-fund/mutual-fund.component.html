@@ -1,0 +1,77 @@
+ <!-- <div align="right">
+   <select>
+    <option selected>All</option>
+    <option >Equity</option>
+    <option>Debt</option>
+    <option>Hybrid</option>
+  </select> -->
+  <!-- <input type="text" [(ngModel)]="searchTerm" (ngModelChange)="search()"> -->
+ <!-- </div>
+ <br>
+<table border="2px">
+    <tr>
+      <th> Mutual Fund Id</th>
+      <th>Fund Name</th>
+      <th>Type of Fund</th>
+      <th>Open Date</th>
+      <th>Close Date</th>
+      <th>Minimum Investment</th>
+      <th>Category</th>
+      
+    </tr>
+    <tr *ngFor="let fund of mutualFund">
+      <td> {{fund.mutualFundId}} </td>
+      <td>{{fund.schemeName}}</td>
+      <td>{{fund.type}}</td> 
+      <td> {{fund.openDate}} </td>
+      <td> {{fund.closeDate}} </td>
+      <td> {{fund.amount}} </td>
+      <td> {{fund.category}} </td>
+      <td>
+        <button mat-raised-button color="primary" (click)="inputBuyDisplay()"> Buy</button>
+        <button mat-raised-button color="primary" (click)="inputSellDisplay()" [disabled]="isButtonDisabled">Sell</button>
+    </td>
+    </tr> -->
+    
+<!-- </table> --> 
+
+<div *ngFor= "let fund of mutualFund">
+  <mat-card class="example-card" >
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{fund.schemeName}}</mat-card-title>
+      <mat-card-subtitle>{{fund.category}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <div>
+        Fund Id: {{fund.mutualFundId}}
+      </div>
+      <div>
+        An equity fund is a mutual fund that invests principally.It can be actively or passively (index fund)managed.
+      </div> 
+      <div style="display: flex; justify-content: space-between;">
+        <p style="flex-basis: 49.5%; ">Interest Repayment</p>
+        <p style="flex-basis: 49.5%; ">{{fund.intrestRepayment}}</p>
+        <!-- 49.5% + 49.5% = 99%, remaining 1% is distributed according to justify-content -->
+      </div>
+      <div style="display: flex; justify-content: space-between;">
+        <p style="flex-basis: 49.5%; ">Principal Repayment</p>
+        <p style="flex-basis: 49.5%; ">{{fund.principleRepayment}}</p>
+        <!-- 49.5% + 49.5% = 99%, remaining 1% is distributed according to justify-content -->
+      </div>
+      <div style="display: flex; justify-content: space-between;">
+        <p style="flex-basis: 49.5%; ">Minimum Investment</p>
+        <p style="flex-basis: 49.5%; ">₹ {{fund.amount}}</p>
+        <!-- 49.5% + 49.5% = 99%, remaining 1% is distributed according to justify-content -->
+      </div>
+    
+     
+    </mat-card-content>
+    
+    <mat-card-actions>
+      
+      &nbsp;&nbsp;<button mat-raised-button color="primary" (click)="changePage(fund.schemeName)">View Details</button>
+    </mat-card-actions>
+    
+  </mat-card>
+  </div>

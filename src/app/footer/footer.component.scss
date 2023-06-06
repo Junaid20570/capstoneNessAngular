@@ -1,0 +1,110 @@
+.footer{
+    background-image: url("../../assets/images/bond.png");
+    height: 19rem;
+    object-fit: fill;
+    background-color: #cccccc;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    // border-top: solid .4rem #c3073f;
+}
+
+.over-lay{
+    position: absolute;
+    background-color: rgba(0, 0, 0, .6);
+    height: 100%;
+    width: 100%;
+    color: rgba(220, 220, 220, 0.916);
+    text-align: center;  
+    padding: 1rem;
+}
+
+.footer-rows{
+    padding: .5rem 11rem;
+}
+
+// .f-columns{
+    // padding-top: 2rem;
+// }
+
+// .logo-div{
+//     height: 13rem;
+//     width: 29rem;
+//     display: flex;
+//     text-align: center;
+//     justify-content: center;
+//     margin: 5.2rem auto;
+// }
+
+.footer_list{
+    list-style-type: none;
+    font-size: 1.6rem;
+    padding: 0;
+    margin-top: 3.5rem;
+}
+
+.list_item{
+    padding: 0;
+    font-size: 1.1rem;
+    cursor: pointer;
+    text-decoration: none;
+    color: #f0f0f0;
+    display: block;
+}
+
+.social{
+    padding :0 .6rem;
+    margin: 0;
+}
+
+.socialm{
+    list-style-type: none;
+    display: inline-block;
+    padding: .1rem 2rem;
+    margin: .1rem;
+}
+
+
+.sicon{
+    color: #f7f7f7;
+    font-size: 1.4rem; 
+    margin: 1rem;
+}
+
+.sicon:hover{
+    color: #c3073fc4;
+}
+
+.footer_social{
+    margin-top: 4%;
+}
+
+.footer_head{
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.contact_info{
+    text-align: left;
+    padding-left: 4.5%;
+
+    &_list{
+        list-style-type: none;
+        padding: 0;
+    }
+}
+
+.c_icon{
+    color: #c3073f;
+    font-size: 2.2rem;
+    width: 3rem;
+    margin-right: 0 .6rem 0 0;
+}
+
+// .copyright{
+//     color: rgba(171, 171, 171, 0.5);
+//     font-size: 1.6rem;
+//     text-align: center;
+// }

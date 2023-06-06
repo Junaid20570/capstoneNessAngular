@@ -1,0 +1,92 @@
+<!--  <marquee width="80%" direction="right" height="400px">
+   <img src="https://th.bing.com/th/id/OIP.8WwjQlF9U8-SXbWjzsDL3QHaDS?w=315&h=155&c=7&r=0&o=5&dpr=1.5&pid=1.7">
+
+    <img src="https://th.bing.com/th/id/OIP._Tcu0cnXNq9rftdbNGObegHaFS?w=264&h=189&c=7&r=0&o=5&dpr=1.5&pid=1.7">
+ 
+    <img src="https://th.bing.com/th/id/OIP.z7lxYloSl2LKAjMdt1w_5wHaE8?w=262&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7">
+ </marquee> 
+
+<table border="2px">
+    <tr>
+      <th>CommodityId</th>
+      <th>Name</th>
+      <th>Volume</th>
+      <th>Current Price</th>
+      <th>Previous Price</th>
+      <th>Profit/Loss</th>
+    </tr>
+    <tr *ngFor="let commodityy of commodity">
+      <td> {{commodityy.commodityId}} </td>
+      <td>{{commodityy.name}}</td>
+   
+     <td *ngIf="volumeG>0">{{volumeG}}</td> 
+      <td *ngIf="volumeC>0">{{volumeC}}</td> 
+      <td *ngIf="volumeC1>0">{{volumeC1}}</td>  
+      <td>{{commodityy.volume}}</td>
+      <td> {{commodityy.currentPrice}}</td>
+      <td> {{commodityy.previousPrice}}</td>
+      <td>{{ ((commodityy.currentPrice-commodityy.previousPrice)/this.commodityy.currentPrice)*100 + '%'}}</td>
+      <td>
+        <button mat-raised-button color="primary" (click)="inputBuyDisplay(commodityy)"> Buy</button>
+        <button mat-raised-button color="primary" (click)="inputSellDisplay()" [disabled]="isButtonDisabled">Sell</button>
+     </td>
+    
+    </tr>
+    
+</table>
+
+ <wj-popup #frmBuyPopup>
+    <form>
+       
+        <div class="modal-body">
+            <label>
+                Enter Volume:
+                <input type="number" />
+            </label>
+            <br />
+            
+        </div>
+    </form>
+</wj-popup> -->
+
+ 
+ <div *ngFor= "let commodityy of commodity">
+    <mat-card class="example-card" >
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{commodityy.name}}</mat-card-title>
+        <!-- <mat-card-subtitle>{{realestate.propertyType}}</mat-card-subtitle> -->
+      </mat-card-header>
+      <mat-card-content>
+        <div>
+          Commodity Id: {{commodityy.commodityId}}
+        </div>
+        <!-- <div>
+          An equity fund is a mutual fund that invests principally.It can be actively or passively (index fund)managed.
+        </div>  -->
+        <!-- <div style="display: flex; justify-content: space-between;">
+          <p style="flex-basis: 49.5%; ">Location</p>
+          <p style="flex-basis: 49.5%; ">{{realestate.location}}</p>
+           49.5% + 49.5% = 99%, remaining 1% is distributed according to justify-content 
+        </div> -->
+        <div style="display: flex; justify-content: space-between;">
+          <p style="flex-basis: 49.5%; ">Current Price</p>
+          <p style="flex-basis: 49.5%; ">{{commodityy.currentPrice}}</p>
+          <!-- 49.5% + 49.5% = 99%, remaining 1% is distributed according to justify-content -->
+        </div>
+        <div style="display: flex; justify-content: space-between;">
+          <p style="flex-basis: 49.5%; ">Previous Price</p>
+          <p style="flex-basis: 49.5%; ">{{commodityy.previousPrice}}</p>
+          <!-- 49.5% + 49.5% = 99%, remaining 1% is distributed according to justify-content -->
+        </div>
+      
+       
+      </mat-card-content>
+      
+      <mat-card-actions >
+        
+        &nbsp;&nbsp;<button mat-raised-button color="primary" (click)="changeVolume()">Invest</button>
+      </mat-card-actions>
+      
+    </mat-card>
+    </div>

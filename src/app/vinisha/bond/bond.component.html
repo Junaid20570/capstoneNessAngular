@@ -1,0 +1,72 @@
+<!-- <table border="2px">
+    <tr>
+        <td>Bond Id</td>
+        <td>Bond Name</td>
+        <td>Tenure</td>
+        <td>Price</td>
+        <td>YTM</td>
+        <td>Frequency</td>
+        <td>Taxable</td>
+    </tr>
+    <tr  *ngFor="let bond of  bondDetails">
+        <td>{{bond.bondId}}</td>
+        <td>{{bond.bondName}}</td>
+        <td>{{bond.tenure}}</td>
+        <td>{{bond.price}}</td>
+        <td>{{bond.ytm}}</td>
+        <td>{{bond.frequency}}</td>
+        <td>{{bond.taxable}}</td>
+        <td>
+            <button mat-raised-button color="primary" (click)="getVolume(bond)" >Invest</button>
+        </td>
+    </tr>
+</table> -->
+<div *ngFor="let bond of  bondDetails">
+    <mat-card class="example-card" >
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{bond.bondName}}</mat-card-title>
+        <!-- <mat-card-subtitle>{{fund.category}}</mat-card-subtitle> -->
+      </mat-card-header>
+      <mat-card-content>
+        <div>
+          Bond Id: {{bond.bondId}}
+        </div>
+        <!-- <div>
+          An equity fund is a mutual fund that invests principally.It can be actively or passively (index fund)managed.
+        </div>  -->
+        <div style="display: flex; justify-content: space-between;">
+          <p style="flex-basis: 49.5%; ">Tenure</p>
+          <p style="flex-basis: 49.5%; ">{{bond.tenure}}</p>
+          <!-- 49.5% + 49.5% = 99%, remaining 1% is distributed according to justify-content -->
+        </div>
+        <div style="display: flex; justify-content: space-between;">
+          <p style="flex-basis: 49.5%; ">Price</p>
+          <p style="flex-basis: 49.5%; ">{{bond.price}}</p>
+          <!-- 49.5% + 49.5% = 99%, remaining 1% is distributed according to justify-content -->
+        </div>
+        <div style="display: flex; justify-content: space-between;">
+          <p style="flex-basis: 49.5%; ">YTM</p>
+          <p style="flex-basis: 49.5%; ">{{bond.ytm}}</p>
+          <!-- 49.5% + 49.5% = 99%, remaining 1% is distributed according to justify-content -->
+        </div>
+        <div style="display: flex; justify-content: space-between;">
+            <p style="flex-basis: 49.5%; ">Frequency</p>
+            <p style="flex-basis: 49.5%; ">{{bond.frequency}}</p>
+            <!-- 49.5% + 49.5% = 99%, remaining 1% is distributed according to justify-content -->
+          </div>
+          <div style="display: flex; justify-content: space-between;">
+            <p style="flex-basis: 49.5%; "> Taxable</p>
+            <p style="flex-basis: 49.5%; ">{{bond.taxable}}</p>
+            <!-- 49.5% + 49.5% = 99%, remaining 1% is distributed according to justify-content -->
+          </div>
+      
+       
+      </mat-card-content>
+      
+      <mat-card-actions >
+        &nbsp;&nbsp;<button mat-raised-button color="primary" (click)="changeVolume(bond)">Invest</button>
+      </mat-card-actions>
+      
+    </mat-card>
+    </div>

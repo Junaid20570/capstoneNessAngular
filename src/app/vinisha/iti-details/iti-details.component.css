@@ -1,0 +1,14 @@
+.example-card {
+    max-width: 600px;
+  }
+  
+  .example-header-image {
+    background-image: url('https://assets-netstorage.groww.in/mf-assets/logos/iti_groww.png');
+    background-size: cover;
+  }
+  
+  .example-button-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }

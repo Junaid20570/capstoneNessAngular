@@ -1,0 +1,101 @@
+.invst{
+    padding: 0 7rem;
+    background-color: #fefefe;
+    
+    &_intro{
+        padding: 2rem 4rem 0;
+        margin-bottom: 7rem;
+
+        &_head{
+            padding-top: 3rem;
+    
+            &_line{
+                font-family: 'Ubuntu', sans-serif;
+            }
+        }
+
+        &_imgSec_img{
+            height: 15rem;
+            width: 29rem;
+            position: absolute;
+            left: -1rem;
+        }
+    }
+
+    &__cards{
+        margin: 4rem 0 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+.overlay {
+    position: absolute; 
+    width: 100%;
+    left: 0;
+    bottom: -.04rem;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1; 
+    font-size: 1.1rem;
+    padding: 1.1rem;
+    text-align: center;
+}
+
+.img_container{
+    margin: 0 2rem;
+    height: 16.5rem;
+    width: 20rem;
+}
+
+.invst_learn{
+    margin: 3rem 0;
+    padding: 0 2.5rem;
+    
+    &_video{
+        position: relative;
+        padding: 1% 2.5%;
+        justify-content: right;
+        display: flex;
+
+        &_vid{
+            position: absolute;
+            width: 85%;
+            height: 88%;
+        }
+    }
+
+    &_text{
+        padding: 0 1rem;
+
+        &_head{
+            font-size: 1.4rem;
+        }
+
+        &_para{
+            font-size: .85rem;
+        }
+    }
+}
+
+.card{
+    box-shadow: rgba(0, 0, 0, 0.22) 10px 13px 10px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;    height: 12rem;
+    position: relative;
+    transition: transform .3s;
+
+    &-img-top{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+    }
+
+    &:hover{
+        // transform: translate(1px, -30px);
+        transform: scale(1.07);
+        animation-duration: 5s;
+    }
+}
+
+.hr{
+    border-top: 1px solid black;
+}

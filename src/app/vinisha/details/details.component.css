@@ -1,0 +1,17 @@
+#container {
+    position: relative;
+    width: 800px;
+    }
+    #div1, #div2 {
+    position: absolute;
+    
+    }
+    #div1 {
+    left: 0;
+    width: 1200px;
+    }
+    #div2 {
+    left: 700px;
+    width: 400px;
+    
+    }

@@ -1,0 +1,36 @@
+.contact{
+    display: flex;
+    background-color: rgb(232, 232, 232);
+    margin: -7rem 0 0 0;
+
+    &_download{
+        padding: 2rem 5rem 0 5rem;
+
+        &_head{
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 2.3rem;
+        }
+
+        &_btns{
+            padding-top: .8rem;
+            &_btn{
+                width: 7rem;
+                height: 2.3rem;
+                margin: 0 1rem 0 0;
+            }
+        }
+    }
+
+    &_image{
+        width: 80rem;
+
+        &_img{
+            width: 90%;
+            margin: 1rem;
+        }
+    }
+
+    &_download_btns{
+        display: flex;
+    }
+}

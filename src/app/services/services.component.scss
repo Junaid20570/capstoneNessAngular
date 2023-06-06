@@ -1,0 +1,19 @@
+.services{
+    padding: 3rem 8rem;
+    background-color: #F3F3F3;
+    &__component{
+        text-align: center;
+        padding: 0 1.6rem;
+        &_heading{
+            font-size: 1.09rem;
+            padding-top: .7rem;
+        }
+        &_para{
+            font-size: .89rem;
+        }
+    }
+    &__icon{
+        font-size: 2rem;
+        color: rgb(210, 23, 91);
+    }
+}

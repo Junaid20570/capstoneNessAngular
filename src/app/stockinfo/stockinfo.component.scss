@@ -1,0 +1,48 @@
+.stock{
+    margin: 4rem 4rem 5rem;
+    &_text{
+        padding: 2rem 5rem 0 2rem;
+        &_head{
+            font-family: 'Ubuntu', sans-serif;
+            font-size: 2rem;
+        }
+        &_para{
+            font-size: 1rem;
+        }
+    }
+    &_btn{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 5rem;
+    }
+}
+.stock_imgs{
+    position: relative;
+    // margin-bottom: 16rem;
+    &_img{
+        height: 9rem;
+        width:12rem;
+        border: 1px solid black;
+        transition: transform .4s;
+        &:hover{
+            border:2px solid rgb(190, 30, 110);
+            z-index: 3;
+            transform: scale(1.25);
+        }
+    }
+    &_1{
+        position: absolute;
+        top: 1rem;
+        left: 16.5rem;
+    }
+    &_2{
+        position: absolute;
+        top: 6rem;
+        left: 8rem;
+    }
+    &_3{
+        position: absolute;
+        top: 11rem;
+        left: 16.5rem;
+    }
+}

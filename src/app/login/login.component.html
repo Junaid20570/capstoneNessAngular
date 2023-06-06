@@ -1,0 +1,15 @@
+<form (ngSubmit)="findUser()" [formGroup]="regForm">
+    <input class="input" type="email" placeholder="email"
+    formControlName="email" [(ngModel)]="loginUser.email" required><br>
+    <input class="input" type="password" placeholder="password"
+    formControlName="pwd" [(ngModel)]="loginUser.pwd" required><br>
+    <div class="btns">
+        <input data-bs-dismiss="modal" type="submit" value="Login">
+        <a class="forgot_link" routerLink="/main/modal/forgot">forgot password?</a>
+    </div>
+    <div class="register_link">
+        <a routerLink="/main/modal/register">
+            New to Stock? Create an account
+        </a>
+    </div>
+</form>
