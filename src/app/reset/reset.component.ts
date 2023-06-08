@@ -35,19 +35,22 @@ export class ResetComponent {
           alert('Enter same Password');
         }else{
           console.log(this.updatePassUser);
-          this.registerService.resetPassword(this.updatePassUser).subscribe(
-                  data=> {
-                    //window.location.href
-                    // console.log(data);
-                    this.router.navigate(["login"]);
-                    // console.log(this.updatePassUser);
-                    
-                    alert("reset successful");
-                  },
-                  error=>{
-                  console.log(error) ; 
-                  }
-                )
+          let tok=sessionStorage.getItem('token')
+          if(tok!=null){
+            this.registerService.resetPassword(tok,this.updatePassUser).subscribe(
+              data=> {
+                //window.location.href
+                // console.log(data);
+                this.router.navigate(["login"]);
+                // console.log(this.updatePassUser);
+                
+                alert("reset successful");
+              },
+              error=>{
+              console.log(error) ; 
+              }
+            )
+          }
         }
   }else{
     alert("form is invalid")

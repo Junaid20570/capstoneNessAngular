@@ -1,1 +1,135 @@
-<p>portfolio works!</p>
+<!-- stocks -->
+
+<div class="stock_table" >
+  <h3 style="text-align: center; "><i>STOCKS</i></h3>
+    <table class="table table-hover" >
+        <thead>
+            <th class="table-dark">Date</th>
+            <th class="table-dark">Name</th>
+            <th class="table-dark">Volume</th>
+            <th class="table-dark">Open</th>
+            <th class="table-dark">close</th>
+            <th class="table-dark">Change</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of purStocks; index as i">
+              <td>{{item.datetime }}</td>
+              <td>{{item.stockName}}</td>
+              <td>{{item.volume}}</td>
+              <td>{{item.open}}</td>
+              <td>{{item.close}}</td>
+              <td [ngStyle]="{'color': (item.open<item.close) ? 'red' : 'green'}" ><b>{{item.open-item.close}}</b></td>
+            </tr>
+          </tbody>
+    </table>
+</div>
+<!-- bonds -->
+<div class="stock_table" >
+  <h3 style="text-align: center; "><i>BONDS</i></h3>
+    <table class="table table-hover" >
+        <thead>
+            <th class="table-dark">ID</th>
+            <th class="table-dark">Name</th>
+            <th class="table-dark">Tenure</th>
+            <th class="table-dark">price</th>
+            <th class="table-dark">ytm</th>
+            <th class="table-dark">frequency</th>
+            <th class="table-dark">taxable</th>
+            <th class="table-dark">volume</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of purBonds; index as i">
+              <td>{{item.bondId }}</td>
+              <td>{{item.bondName}}</td>
+              <td>{{item.tenure}}</td>
+              <td>{{item.price}}</td>
+              <td>{{item.ytm}}</td>
+              <td>{{item.frequency}}</td>
+              <td>{{item.taxable}}</td>
+              <td>{{item.volume}}</td>
+              <!-- <td [ngStyle]="{'color': (item.open<item.close) ? 'red' : 'green'}" ><b>{{item.open-item.close}}</b></td> -->
+            </tr>
+          </tbody>
+    </table>
+</div>
+<!-- funds -->
+<div class="stock_table" >
+  <h3 style="text-align: center; "><i>MUTUAL FUNDS</i></h3>
+    <table class="table table-hover" >
+        <thead>
+            <th class="table-dark">ID</th>
+            <th class="table-dark">Name</th>
+            <th class="table-dark">Type</th>
+            <th class="table-dark">intrestRepayment</th>
+            <th class="table-dark">principleRepayment</th>
+            <th class="table-dark">amount</th>
+            <th class="table-dark">category</th>
+            <th class="table-dark">volume</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of purFund; index as i">
+              <td>{{item.mutualFundId }}</td>
+              <td>{{item.schemeName}}</td>
+              <td>{{item.type}}</td>
+              <td>{{item.intrestRepayment}}</td>
+              <td>{{item.principleRepayment}}</td>
+              <td>{{item.amount}}</td>
+              <td>{{item.category}}</td>
+              <td>{{item.volume}}</td>
+              <!-- <td [ngStyle]="{'color': (item.open<item.close) ? 'red' : 'green'}" ><b>{{item.open-item.close}}</b></td> -->
+            </tr>
+          </tbody>
+    </table>
+</div>
+<!-- commodity -->
+<div class="stock_table" >
+  <h3 style="text-align: center; "><i>COMMODITY</i></h3>
+    <table class="table table-hover" >
+        <thead>
+            <th class="table-dark">ID</th>
+            <th class="table-dark">Name</th>
+            <th class="table-dark">current price</th>
+            <th class="table-dark">previous price</th>
+            <th class="table-dark">Volume</th>
+            <th class="table-dark">Change</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of purCommodities; index as i">
+              <td>{{item.commodityId }}</td>
+              <td>{{item.name}}</td>
+              <td>{{item.currentPrice}}</td>
+              <td>{{item.previousPrice}}</td>
+              <td>{{item.volume}}</td>
+              <td [ngStyle]="{'color': (item.currentPrice<item.previousPrice) ? 'red' : 'green'}" ><b>{{item.currentPrice-item.previousPrice}}</b></td>
+            </tr>
+          </tbody>
+    </table>
+</div>
+<!-- real estate -->
+
+<div class="stock_table" >
+  <h3 style="text-align: center; "><i>REAL ESTATE</i></h3>
+    <table class="table table-hover" >
+        <thead  >
+            <th class="table-dark">ID</th>
+            <th class="table-dark">Name</th>
+            <th class="table-dark">Volume</th>
+            <th class="table-dark">Type</th>
+            <th class="table-dark">Location</th>
+            <th class="table-dark">current price</th>
+            <th class="table-dark">previous price</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of purRealEstate; index as i">
+              <td>{{item.realEstateId }}</td>
+              <td>{{item.name}}</td>
+              <td>{{item.volume}}</td>
+              <td>{{item.propertyType}}</td>
+              <td>{{item.location}}</td>
+              <td>{{item.currentPrice}}</td>
+              <td>{{item.previousPrice}}</td>
+              <!-- <td [ngStyle]="{'color': (item.open<item.close) ? 'red' : 'green'}" ><b>{{item.open-item.close}}</b></td> -->
+            </tr>
+          </tbody>
+    </table>
+</div>

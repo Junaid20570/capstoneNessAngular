@@ -1,39 +1,19 @@
-/* 
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-  }
-  
-  td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #dddddd;
-  }
-   */
-
-   .example-card {
-    max-width: 400px;
-  }
-  
-  .example-header-image {
-    background-image: url('https://th.bing.com/th?id=OIP.vYd9LOLSl1Dwdu81NJJLLAHaEP&w=330&h=189&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2');
-    background-size: cover;
-  }
-  
-  .example-button-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-  }
-  div {
-    margin: 10px;
-    padding: 0.1%;
-    display: inline-block;
-    resize: both;
-  }
-  
+.example-card {
+  width: 400px;
+  left:150px;
+}
+.example-header-image {
+  background-image: url('https://th.bing.com/th/id/OIP.6TJ9pI1WBjxKx3qHN9WoLAHaE7?pid=ImgDet&rs=1');
+  background-size: cover;
+}
+.example-button-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+div {
+  margin: 10px;
+  padding: 0.1%;
+  display: inline-block;
+  resize: both;
+}

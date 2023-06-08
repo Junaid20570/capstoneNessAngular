@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { RealEstate } from '../models/realestate.model';
 
@@ -8,7 +8,15 @@ import { RealEstate } from '../models/realestate.model';
 export class RealEstateService {
 
   constructor(private _http:HttpClient) { }
-  getRealEstateDetails(){
-    return this._http.get<RealEstate[]>("http://localhost:1234/realestate/getAllRealEstate");
+  getRealEstateDetails(token:string){
+    let mytoken='Bearer '+token
+    let head=new HttpHeaders().set('Authorization',mytoken)
+    return this._http.get<RealEstate[]>("http://localhost:5555/finvest/realestate/getAllRealEstate",{headers:head});
+  }
+
+  postRE(bond:RealEstate,token:string,mail:string){
+    let mytoken='Bearer '+token
+    let head=new HttpHeaders().set('Authorization',mytoken)
+    return this._http.post<RealEstate>(`http://localhost:5555/finport/realestate/saveRealEstate/${mail}`, bond, {headers:head})
   }
 }

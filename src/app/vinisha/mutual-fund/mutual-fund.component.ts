@@ -16,46 +16,45 @@ export class MutualFundComponent {
   mutualFund:MutualFund[]=[];
   searchTerm:String=''
   ngOnInit(){
-    this._mutualSrv.getMutualFunds().subscribe(
-      data=>{
-        this.mutualFund=data;
-       
-      },
-      error=>{
-        console.log(error)
-      }
-
-    )
+    let tok=localStorage.getItem('token')
+    if(tok!=null){
+      this._mutualSrv.getMutualFunds(tok).subscribe(
+        data=>{
+          this.mutualFund=data;
+         
+        },
+        error=>{
+          console.log(error)
+        }
+  
+      )
+    }
+    
 
   }
-  // inputBuyDisplay(){
-  //   let volume=confirm("Are you sure to invest in this Mutual Fund?")
-  //   if(volume)
-  //    alert("Investment Made")
-  //   else
-  //    alert("Continue")
-  //   this.isButtonDisabled=false
-  // }
-  
+  invest(item:MutualFund){
+    let tok=localStorage.getItem('token')
+    let mail=localStorage.getItem('userName')
+    if(tok!=null && mail!=null){
+      this._mutualSrv.postFunds(item,tok,mail).subscribe(
+        data=>{
+          alert('Fund purchased')
+        },
+        error=>{
+          console.log(error)
+        }
+      )
+  }
+}
   changePage(name:String){
     if(name=="DSP MidCap Fund")
-    this._router.navigate(["/details"])
+    this._router.navigate(["/main/vinisha/details"])
     else if(name=="Mirae Asset Silver ETF")
-    this._router.navigate(["/miraedetails"])
+    this._router.navigate(["/main/vinisha/miraedetails"])
     else if(name=="ITI Focused Equity Fund(G)-Direct Plan" || name=="ITI Focused Equity Fund-Reg(G)")
-    this._router.navigate(["/itidetails"])
+    this._router.navigate(["/main/vinisha/itidetails"])
     else if(name=="Axis NIFTY IT Index Fund-Reg(G)")
-    this._router.navigate(["/axis"])
+    this._router.navigate(["/main/vinisha/axis"])
   }
-  // search(){
-  //   if(this.searchTerm=='')
-  //   {
-  //     this.ngOnInit();
-  //   }
-  //   else{
-  //     this.mutualFund=this.mutualFund.filter(res=>{
-  //       return res.searchTerm.toLocaleLowerCase().match(this.searchTerm.toLocaleLowerCase());
-  //     })
-  //   }
-  // }
+
 }

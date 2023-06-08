@@ -1,40 +1,3 @@
- <!-- <div align="right">
-   <select>
-    <option selected>All</option>
-    <option >Equity</option>
-    <option>Debt</option>
-    <option>Hybrid</option>
-  </select> -->
-  <!-- <input type="text" [(ngModel)]="searchTerm" (ngModelChange)="search()"> -->
- <!-- </div>
- <br>
-<table border="2px">
-    <tr>
-      <th> Mutual Fund Id</th>
-      <th>Fund Name</th>
-      <th>Type of Fund</th>
-      <th>Open Date</th>
-      <th>Close Date</th>
-      <th>Minimum Investment</th>
-      <th>Category</th>
-      
-    </tr>
-    <tr *ngFor="let fund of mutualFund">
-      <td> {{fund.mutualFundId}} </td>
-      <td>{{fund.schemeName}}</td>
-      <td>{{fund.type}}</td> 
-      <td> {{fund.openDate}} </td>
-      <td> {{fund.closeDate}} </td>
-      <td> {{fund.amount}} </td>
-      <td> {{fund.category}} </td>
-      <td>
-        <button mat-raised-button color="primary" (click)="inputBuyDisplay()"> Buy</button>
-        <button mat-raised-button color="primary" (click)="inputSellDisplay()" [disabled]="isButtonDisabled">Sell</button>
-    </td>
-    </tr> -->
-    
-<!-- </table> --> 
-
 <div *ngFor= "let fund of mutualFund">
   <mat-card class="example-card" >
     <mat-card-header>
@@ -71,6 +34,10 @@
     <mat-card-actions>
       
       &nbsp;&nbsp;<button mat-raised-button color="primary" (click)="changePage(fund.schemeName)">View Details</button>
+    </mat-card-actions>
+    <mat-card-actions>
+      
+      &nbsp;&nbsp;<button mat-raised-button color="primary" (click)="invest(fund)">Invest</button>
     </mat-card-actions>
     
   </mat-card>

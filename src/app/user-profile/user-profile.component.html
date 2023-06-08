@@ -1,2 +1,34 @@
-<p>user-profile works!</p>
-{{userName}}
+<body>
+    <div class="profile">
+        <div class="profile_image">
+            <img class="profile_image_img" src="../../assets/download.png">
+        </div>
+        <div class="profile_info">
+            <h3 class="profile_info_head">{{User.uname}}</h3>
+            <div class="profile_info_details">
+                <table class="table">
+                    <tbody>
+                        <td>
+                            <!-- <tr>Name: </tr> -->
+                            <tr>Email: </tr>
+                            <tr>Pan Number: </tr>
+                            <tr>Location: </tr>
+                        </td>
+                        <td>
+                            <!-- <tr>{{User.pwd}}</tr> -->
+                            <tr>{{User.email}}</tr>
+                            <tr>{{User.panNo}}</tr>
+                            <tr>{{User.location}}</tr>
+                        </td>
+                    </tbody>
+                </table>
+                <a href="#" class="links">view stock details</a><br>
+                <a href="#" class="links">view mutual funds</a><br>
+                <a href="#" class="links">view bonds</a><br>
+                <a href="#" class="links">view commodity</a><br>
+                <a href="#" class="links">view real estate</a><br>
+                <button class="button reset-btn">Reset Password</button>
+            </div>
+        </div>
+    </div>
+    </body>

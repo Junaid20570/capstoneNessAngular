@@ -1,12 +1,11 @@
 .example-card {
   max-width: 400px;
+  left:150px;
 }
-
 .example-header-image {
   background-image: url('https://th.bing.com/th?id=OIP.vYd9LOLSl1Dwdu81NJJLLAHaEP&w=330&h=189&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2');
   background-size: cover;
 }
-
 .example-button-row {
   display: flex;
   align-items: center;

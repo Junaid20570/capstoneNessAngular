@@ -19,6 +19,10 @@ import { BondComponent } from './vinisha/bond/bond.component';
 import { CommodityComponent } from './vinisha/commodity/commodity.component';
 import { MutualFundComponent } from './vinisha/mutual-fund/mutual-fund.component';
 import { RealEstateComponent } from './vinisha/real-estate/real-estate.component';
+import { DetailsComponent } from './vinisha/details/details.component';
+import { ItiDetailsComponent } from './vinisha/iti-details/iti-details.component';
+import { MiraeDetailsComponent } from './vinisha/mirae-details/mirae-details.component';
+import { AxisComponent } from './vinisha/axis/axis.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'main', pathMatch:'full' },
@@ -38,7 +42,11 @@ const routes: Routes = [
       {path:'bond', component:BondComponent},
       {path:'commodity', component:CommodityComponent},
       {path:"mutual-fund", component:MutualFundComponent},
-      {path:"real-estate", component:RealEstateComponent}
+      {path:"real-estate", component:RealEstateComponent},
+      {path:"details",component:DetailsComponent},
+      {path:"miraedetails",component:MiraeDetailsComponent},
+      {path:"itidetails",component:ItiDetailsComponent},
+      {path:"axis",component:AxisComponent}
     ]},
     {path:"profile", component:UserProfileComponent, canActivate:[UserGuard]},
     {path:'portfolio', component:PortfolioComponent, canActivate:[UserGuard]},

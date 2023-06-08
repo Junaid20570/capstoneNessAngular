@@ -18,6 +18,7 @@ export class StockdetailsComponent {
   
   stockApi:StockApi[]=[]
   stockApiDay:StockApi[]=[]
+  buyStocks:StockApi[]=[]
   symbol:string | undefined |null
   name:string=''
   chartType:string='splineArea'
@@ -32,10 +33,28 @@ export class StockdetailsComponent {
     if(this.symbol!=null){
     this._serv.getApi(this.symbol).subscribe(data=>{
       this.stockApi=JSON.parse(JSON.stringify( data.values))
+      this.buyStocks=this.stockApi
       console.log(this.stockApi)
       this.view()
     })
   } 
+  }
+  buyStock(){
+    let item=this.buyStocks[0]
+    console.log(item.datetime)
+    let dt=JSON.stringify(item.datetime).replace(" ","T")
+    console.log(dt)
+    item.datetime=JSON.parse(dt)
+    let tok=localStorage.getItem('token')
+    let emal=localStorage.getItem('userName')
+    if(tok!=null && emal!=null){
+      this._serv.postStock(item,this.name,tok,emal).subscribe(
+        data=>{
+          alert('stocks purchased successfully')
+        }
+      )
+    }
+ 
   }
   getDet(){
     // console.log(this.endDate)

@@ -12,38 +12,46 @@ export class BondComponent {
   bond=new Bond();
   constructor(private _bondSrv:BondService){}
   ngOnInit(){
-    this._bondSrv.getBondDetails().subscribe(
-       data=>{
-        this.bondDetails=data;
-       },
-       error=>{
-        console.log(error);
-       }
-    )
+    let tok=localStorage.getItem('token')
+    if(tok!=null){
+      this._bondSrv.getBondDetails(tok).subscribe(
+        data=>{
+         this.bondDetails=data;
+        },
+        error=>{
+         console.log(error);
+        }
+     )
+    }
   }
   changeVolume(item:Bond){
-    this.bond.volume=prompt("Enter the volume of bonds you want to buy:")
+    item.volume=prompt("Enter the volume of bonds you want to buy:")
     console.log(this.bond.volume)
-    this._bondSrv.postBond(this.bond).subscribe(
-      data=>{
-        console.log(data)
-      },
-      error=>{
-        console.log(error)
-      }
-    )
+    let tok=localStorage.getItem('token')
+    let mail=localStorage.getItem('userName')
+    if(tok!=null && mail!=null){
+      this._bondSrv.postBond(item,tok,mail).subscribe(
+        data=>{
+          alert('Bond purchased with '+item.volume+' volume')
+        },
+        error=>{
+          console.log(error)
+        }
+      )
+    }
+
 
   }
-  getVolume(bond:Bond){
-    console.log(bond)
-    this._bondSrv.postBond(bond).subscribe(
-      data=>{
-        console.log(data)
-      },
-      error=>{
-        console.log(error)
-      }
-    )
-  }
+  // getVolume(bond:Bond){
+  //   console.log(bond)
+  //   this._bondSrv.postBond(bond).subscribe(
+  //     data=>{
+  //       console.log(data)
+  //     },
+  //     error=>{
+  //       console.log(error)
+  //     }
+  //   )
+  // }
   
 }

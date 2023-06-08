@@ -11,21 +11,19 @@ import { Router } from '@angular/router';
 })
 export class MainnavbarComponent {
   constructor(private router:Router){}
-
+  usr:string=''
   loginUser=true;
   logoutUser=false;
   ngOnInit(): void {
-    let user = localStorage.getItem('user');
-    if(user=='login'){
-      this.loginUser=false;
-      this.logoutUser=true;
+    let user=localStorage.getItem('user');
+    if(user!=null){
+      this.usr= user
     }
     }
 
     logOut(){
       this.router.navigate(["/main/home"]);
-      localStorage.setItem('user', '');
-      this.loginUser=true;
-      this.logoutUser=false;
+      window.location.reload()
+      localStorage.clear()
     }
 }

@@ -24,28 +24,30 @@ export class LoginComponent {
     // static email:any;
   loginUser = new User();
   findUser(){
-    if(this.regForm.valid){
-      this.registerService.loginCustomer(this.loginUser).subscribe(
-        data=> {
-          if(data != null){
-            alert("login successful");
-            this.router.navigate(["/main/home"]);
-            window.location.reload();
-            // LoginComponent.userName=data.uname;
-            LoginComponent.validUser="valid";
-            localStorage.setItem('userName',data.uname);
-            localStorage.setItem('user','valid');
-              
-          }else{
+    // if(this.regForm.valid){
+      
+    // }else{
+    //   alert("plz give valid credentials - login");
+    // }
+    this.registerService.genToken(this.loginUser).subscribe(
+      data=> {
+        if(data != null){
+          localStorage.setItem('token',JSON.parse(JSON.stringify(data)))
+          this.registerService.loginCustomer(data,this.loginUser).subscribe(
+            loginData=>{
+              this.router.navigate(["/main/home"]);
+              LoginComponent.validUser="valid";
+              localStorage.setItem('userName',loginData.email);
+              localStorage.setItem('user','valid');
+            }
+          )         
+        }else{
           alert("user Not found - login");
-          }
-        },
-        error=>{
-        console.log(error) ; 
         }
-      )
-    }else{
-      alert("plz give valid credentials - login");
-    }
+      },
+      error=>{
+        console.log(error) ; 
+      }
+    )
   }
 }

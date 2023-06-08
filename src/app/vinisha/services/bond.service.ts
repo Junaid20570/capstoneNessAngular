@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Bond } from '../models/bond.model';
 
@@ -8,10 +8,14 @@ import { Bond } from '../models/bond.model';
 export class BondService {
 
   constructor(private _http:HttpClient) { }
-  getBondDetails(){
-    return this._http.get<Bond[]>("http://localhost:1234/bond/getBond");
+  getBondDetails(token:string){
+    let mytoken='Bearer '+token
+    let head=new HttpHeaders().set('Authorization',mytoken)
+    return this._http.get<Bond[]>("http://localhost:5555/finvest/bond/getBond",{headers:head});
   }
-  postBond(bond:Bond){
-    return this._http.post<Bond>("http://localhost:1234/bond/buyBond", bond, {responseType: 'text' as 'json'})
+  postBond(bond:Bond,token:string,mail:string){
+    let mytoken='Bearer '+token
+    let head=new HttpHeaders().set('Authorization',mytoken)
+    return this._http.post<Bond>(`http://localhost:5555/finport/bond/saveBond/${mail}`, bond, {headers:head})
   }
 }

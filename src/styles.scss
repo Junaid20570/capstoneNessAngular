@@ -1,4 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
-
-// html, body { height: 100%; }
-// body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+$primary-color:rgb(191, 34, 94);
+.button {
+    background-color: $primary-color;
+    border: 0;
+    border-radius: 0;
+    color: white;
+    cursor: pointer;
+    line-height: 1;
+    padding: .6rem 1rem;
+    position: relative;
+    text-decoration: none;
+    transition: all 250ms;
+}
+.button:hover,
+.button:focus {
+    border:0;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    color: white;
+}
+.button:hover {
+    transform: translateY(-3px);
+    border:0;
+}
+.button:active {
+    background-color: #CA1A60;
+    border:0;
+    box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+    color: white;
+    transform: translateY(0);
+}

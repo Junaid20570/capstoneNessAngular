@@ -1,0 +1,65 @@
+body{
+    background-color: rgb(205, 33, 88);
+    height: 90vh;
+}
+.profile{
+    background-color: white;
+    display: inline-block;
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 25rem;
+    width: 45rem;
+    margin-top: 1.2rem;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px,
+        rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px,
+        rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    &_image{
+        position: absolute;
+        width: 10rem;
+        height: 100%;
+        background-color: rgb(217, 23, 84);
+        &_img{
+            height: 14rem;
+            width: 14rem;
+            position: absolute;
+            top: 5rem;
+            left: 3rem;
+            border-radius: 50%;
+        }
+    }
+    &_info{
+        position: absolute;
+        left: 19rem;
+        color: black;
+        z-index: 4;
+        padding: 4rem 0;
+        &_head{
+        }
+        &_details{
+            margin-top: 1rem;
+            width: 23rem;
+        }
+    }
+}
+.table{
+    margin: 0 0 -.5rem -.7rem;
+    width: 19rem;
+}
+.table td{
+    border-top: 0;
+}
+.table tr{
+    border-bottom: 0;
+    padding: .2rem 0;
+    display: block;
+}
+.links{
+    color: rgb(210, 38, 110);
+}
+.reset-btn{
+    position: absolute;
+    right: 0;
+}

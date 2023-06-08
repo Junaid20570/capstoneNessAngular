@@ -5,4 +5,6 @@ export class StockApi{
     low:number=0
     close:number=0
     volume: number=0
+    //extra
+    stockName:string=''
 }

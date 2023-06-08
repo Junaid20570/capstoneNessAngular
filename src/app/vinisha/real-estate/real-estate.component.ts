@@ -12,17 +12,32 @@ export class RealEstateComponent {
   isButtonDisabled=false
   constructor(private _realEstateSrv:RealEstateService){}
   ngOnInit(){
-    this._realEstateSrv.getRealEstateDetails().subscribe(
-      data=>{
-        this.realEstate=data;
-      },
-      error=>{
-        console.log(error);
-      }
-    )
+    let tok=localStorage.getItem('token')
+    if(tok!=null){
+      this._realEstateSrv.getRealEstateDetails(tok).subscribe(
+        data=>{
+          this.realEstate=data;
+        },
+        error=>{
+          console.log(error);
+        }
+      )
+    }
   }
-  changeVolume(){
-    let volume=prompt("Enter the volume you want to invest");
+  changeVolume(item:RealEstate){
+    item.volume=prompt("Enter the volume you want to invest");
+    let tok=localStorage.getItem('token')
+    let mail=localStorage.getItem('userName')
+    if(tok!=null && mail!=null){
+      this._realEstateSrv.postRE(item,tok,mail).subscribe(
+        data=>{
+          alert('Real Estate purchased')
+        },
+        error=>{
+          console.log(error)
+        }
+      )
+  }
    
     this.isButtonDisabled=true
     

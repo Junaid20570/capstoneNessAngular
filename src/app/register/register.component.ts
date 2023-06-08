@@ -65,7 +65,12 @@ export class RegisterComponent {
     // else{
     //   alert("submit valid detail");
     // }
+    this.registerService.registerCustomer(this.newUser).subscribe(
+      data=>{
+        alert("login successful")
+      }
+    )
 
-    this.router.navigate(["home"]);
+    this.router.navigate(["/main/home"]);
   }
 }

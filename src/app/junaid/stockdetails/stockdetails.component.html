@@ -31,7 +31,7 @@
         <th>OPEN PRICE</th>
         <th>CLOSE PRICE</th>
         <th>%CHANGE</th>
-        <button class="btn glyphicon glyphicon-refresh" (click)="refresh()"> </button>
+        <button class="btn btn-primary" (click)="buyStock()" >Buy</button>
       </thead>
       <tbody>
         <tr *ngFor="let item of stockApi | paginate: {
