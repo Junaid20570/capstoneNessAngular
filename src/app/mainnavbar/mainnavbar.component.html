@@ -1,63 +1,42 @@
-<!-- <nav class="navbar navbar-expand-lg">
-    <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-link active" aria-current="page" routerLink="/main/home">Home</a>
-                <a class="nav-link" routerLink="/main/junaid">Junaid</a>
-                <a class="nav-link" routerLink="/main/vinisha">Vinisha</a>
-                <a class="nav-link" routerLink="/main/portfolio">portfolio</a>
-                <a class="nav-link" *ngIf="loginUser" data-bs-target="#mainModal" routerLink="/main/modal" data-bs-toggle="modal" >Login</a>
-                <div class="dropdown">
-                    <a class="nav-link" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fa-regular fa-user admin"></i>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="nav-link" routerLink="/main/profile">profile</a></li>
-                        <li><a class="dropdown-item" (click)="logOut()">Log Out</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <nav class="navbar navbar-dark navbar-expand-lg">
-        <div class="container-fluid row">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <img class="col-lg-6"  src="#">
-          <div class="collapse navbar-collapse col-lg-6 nav_component" id="navbarTogglerDemo01">
-            <!-- <a class="navbar-brand" href="#">Hidden brand</a> -->
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" routerLink="/main/home">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" routerLink="/main/junaid">Junaid</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" routerLink="/main/vinisha">Vinisha</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" routerLink="/main/portfolio">portfolio</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-bs-target="#mainModal" routerLink="/main/modal" data-bs-toggle="modal" >Login</a>
-            </li>
-              <li class="nav-item">
-                <div class="dropdown">
-                    <a class="nav-link" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fa-regular fa-user admin"></i>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="nav-link" routerLink="/main/profile">profile</a></li>
-                        <li><a class="dropdown-item" (click)="logOut()">Log Out</a></li>
-                    </ul>
-                </div>
-              </li>
-            </ul>
+<nav class="navbar navbar-dark navbar-expand-lg">
+  <div class="container-fluid row">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- <img class="col-lg-6"  src="#"> -->
+    <div class="col-lg-6">
+      <i class="fa-solid fa-building-columns icon_main"></i>
+    </div>
+    <div class="collapse navbar-collapse col-lg-6 nav_component" id="navbarTogglerDemo01">
+      <!-- <a class="navbar-brand" href="#">Hidden brand</a> -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/main/home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link stock_nav" routerLink="/main/junaid">Stock Analysis</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/main/vinisha">Investments</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/main/portfolio">Portfolio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="usr=='invalid'" data-bs-target="#mainModal" routerLink="/main/modal" data-bs-toggle="modal" >Login</a>
+      </li>
+        <li class="nav-item" *ngIf="usr=='valid'">
+          <div class="dropdown">
+              <a class="nav-link" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fa-regular fa-user admin"></i>
+              </a>
+              <ul class="dropdown-menu">
+                  <li><a class="nav-link" routerLink="/main/profile">profile</a></li>
+                  <li><a class="dropdown-item" (click)="logOut()">Log Out</a></li>
+              </ul>
           </div>
-        </div>
-      </nav>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

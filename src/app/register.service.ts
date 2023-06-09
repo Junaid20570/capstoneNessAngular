@@ -7,7 +7,7 @@ import { User } from 'src/models/UserModel';
 })
 export class RegisterService {
   customerProfile(user: User) {
-    return this.http.post<User>("http://localhost:8080/user/findById",user)
+    return this.http.post<User>("http://localhost:5555/user/na/findById",user)
   }
   constructor(private http:HttpClient) {}
 
@@ -25,9 +25,11 @@ export class RegisterService {
   }
 
   //update needs token
-  resetPassword(token:string,updatePassUser : User){
-    let mytoken='Bearer '+token
-    let head=new HttpHeaders().set('Authorization',mytoken)
-    return this.http.put<string>("http://localhost:5555/user/update",updatePassUser,{headers:head})
+  resetPassword(updatePassUser : User){
+    return this.http.put<string>(`http://localhost:5555/user/na/reset`,updatePassUser)
+  }
+
+  forgotPass(mail:string){
+    return this.http.get<User>(`http://localhost:5555/user/na/forgot/${mail}`)
   }
 }

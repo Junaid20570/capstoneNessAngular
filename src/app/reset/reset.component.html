@@ -1,7 +1,7 @@
 <form (ngSubmit)="UpdatePass()" [formGroup]="regForm">
     <input class="input" type="password" placeholder="password"
     formControlName="pwd" [(ngModel)]="updatePassUser.pwd" required><br>
-    <input class="input" type="password" placeholder="conferm password"
+    <input class="input" type="password" placeholder="confirm password"
     formControlName="cnfpwd" required><br>
     <div class="btns">
         <input type="submit" value="Reset">

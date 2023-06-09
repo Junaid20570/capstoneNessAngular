@@ -23,6 +23,7 @@ import { DetailsComponent } from './vinisha/details/details.component';
 import { ItiDetailsComponent } from './vinisha/iti-details/iti-details.component';
 import { MiraeDetailsComponent } from './vinisha/mirae-details/mirae-details.component';
 import { AxisComponent } from './vinisha/axis/axis.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'main', pathMatch:'full' },
@@ -59,6 +60,7 @@ const routes: Routes = [
       {path:"reset", component:ResetComponent}
     ]},
   ]},
+  {path:"**", component:ErrorPageComponent}
 ];
 
 @NgModule({

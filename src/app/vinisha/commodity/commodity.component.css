@@ -1,5 +1,8 @@
 .example-card {
   width: 1100px;
+  box-shadow: 0px 0px 10px 0px #9B9B9B,
+        0 1px 1px 0 #9B9B9B,
+        0 1px 3px 0 #9B9B9B;
 }
 .example-header-image {
   background-image: url('https://th.bing.com/th?id=OIP.fFraA3v44k-Ulx9js7fUigHaFj&w=288&h=216&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2');

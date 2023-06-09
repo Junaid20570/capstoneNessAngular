@@ -1,5 +1,8 @@
 <input class="input" type="text" placeholder="email" [(ngModel)]="email"><br>
 <!-- <button routerLink="/reset" (click)="getEmail()">Reset</button> -->
+<div class="btns ">
+    <button class="button" (click)="checkMail()" >Verify Mail</button>
+</div>
 <div class="btns">
-    <button routerLink="/main/modal/reset">Reset</button>
+    <button routerLink="/main/modal/reset" id="reset" [(disabled)]="prop" >Reset</button>
 </div>

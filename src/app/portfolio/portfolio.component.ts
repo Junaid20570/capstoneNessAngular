@@ -6,6 +6,9 @@ import { Commodity } from '../vinisha/models/commodity.model';
 import { RealEstate } from '../vinisha/models/realestate.model';
 import { StockApi } from '../junaid/models/stockApi.model';
 
+import { StockdetailsComponent } from '../junaid/stockdetails/stockdetails.component';
+import { StockService } from '../junaid/services/stock.service';
+
 @Component({
   selector: 'app-portfolio',
   templateUrl: './portfolio.component.html',
@@ -13,8 +16,18 @@ import { StockApi } from '../junaid/models/stockApi.model';
 })
 export class PortfolioComponent {
 
-  constructor(private _portServ:PortfoliService){}
-  
+  constructor(private _portServ:PortfoliService , private _stockServ:StockService){}
+
+  stockCurPrice:number=0
+  chnge:number=0;
+  indx:number=0;
+  purStocks:StockApi[]=[];
+  curPriceArray=new StockApi()
+  purBonds:Bond[]=[];
+  purFund:MutualFund[]=[];
+  purCommodities:Commodity[]=[]
+  purRealEstate:RealEstate[]=[]
+
 ngOnInit(){
   this.getStock()
   this.getBond()
@@ -22,12 +35,19 @@ ngOnInit(){
   this.getFund()
   this.getRE()
 }
+analyse(item:StockApi,ind:number){
+  this.indx=ind
+  this._stockServ.getDay(item.symbol,new Date()).subscribe(
+    data=>{
+      let dat=JSON.parse(JSON.stringify( data.values))
+      this.curPriceArray=dat[0]
+      this.stockCurPrice=this.curPriceArray.close
+      this.chnge=item.close-this.stockCurPrice
+    }
+  )
 
-  purStocks:StockApi[]=[];
-  purBonds:Bond[]=[];
-  purFund:MutualFund[]=[];
-  purCommodities:Commodity[]=[]
-  purRealEstate:RealEstate[]=[]
+}
+
   getStock(){
     let tok=localStorage.getItem('token')
     let mail=localStorage.getItem('userName')
@@ -84,5 +104,71 @@ ngOnInit(){
     }
   }
 
+  //==========SELL=================
 
+  sellStock(item:StockApi){
+    let tok=localStorage.getItem('token')
+    let mail=localStorage.getItem('userName')
+    if(tok!=null && mail!=null){
+      this._portServ.sellStock(tok,item).subscribe(
+        data=>{
+          alert('stock sold')
+          window.location.reload()
+        }
+      )
+    }
+    
+  }
+
+  sellBond(item:Bond){
+    let tok=localStorage.getItem('token')
+    let mail=localStorage.getItem('userName')
+    if(tok!=null && mail!=null){
+      this._portServ.sellBond(tok,item).subscribe(
+        data=>{
+          alert('stock sold')
+          window.location.reload()
+        }
+      )
+    }
+  }
+
+  sellFund(item:MutualFund){
+    let tok=localStorage.getItem('token')
+    let mail=localStorage.getItem('userName')
+    if(tok!=null && mail!=null){
+      this._portServ.sellFund(tok,item).subscribe(
+        data=>{
+          alert('stock sold')
+          window.location.reload()
+        }
+      )
+    }
+  }
+
+  sellCom(item:Commodity){
+    let tok=localStorage.getItem('token')
+    let mail=localStorage.getItem('userName')
+    if(tok!=null && mail!=null){
+      this._portServ.sellCom(tok,item).subscribe(
+        data=>{
+          alert('stock sold')
+          window.location.reload()
+        }
+      )
+    }
+  }
+
+  sellRE(item:RealEstate){
+    let tok=localStorage.getItem('token')
+    let mail=localStorage.getItem('userName')
+    if(tok!=null && mail!=null){
+      this._portServ.sellRE(tok,item).subscribe(
+        data=>{
+          alert('stock sold')
+          window.location.reload()
+        }
+      )
+    }
+  }
 }

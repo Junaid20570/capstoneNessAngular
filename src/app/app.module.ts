@@ -45,6 +45,7 @@ import { StockComponent } from './junaid/stock/stock.component';
 import { SearchPipe } from './junaid/pipes/search.pipe';
 import { StockdetailsComponent } from './junaid/stockdetails/stockdetails.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 
 @NgModule({
@@ -79,7 +80,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     RealEstateComponent,
     StockComponent,
     SearchPipe,
-    StockdetailsComponent
+    StockdetailsComponent,
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,

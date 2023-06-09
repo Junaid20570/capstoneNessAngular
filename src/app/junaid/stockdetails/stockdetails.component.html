@@ -15,6 +15,8 @@
     <button class="button btn-graph" (click)="lineChart()">line graph</button>
     <button class="button btn-graph" (click)="barChart()">bar graph</button>
     <button class="button btn-graph" (click)="pieChart()">pie chart</button>
+    <button class="button btn-primary" *ngIf="usr=='valid'" (click)="buyStock()" >Buy</button>
+
   
   </div>
   
@@ -31,7 +33,6 @@
         <th>OPEN PRICE</th>
         <th>CLOSE PRICE</th>
         <th>%CHANGE</th>
-        <button class="btn btn-primary" (click)="buyStock()" >Buy</button>
       </thead>
       <tbody>
         <tr *ngFor="let item of stockApi | paginate: {

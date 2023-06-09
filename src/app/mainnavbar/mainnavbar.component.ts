@@ -19,11 +19,16 @@ export class MainnavbarComponent {
     if(user!=null){
       this.usr= user
     }
+    console.log(this.usr)
     }
 
     logOut(){
-      this.router.navigate(["/main/home"]);
-      window.location.reload()
-      localStorage.clear()
+      localStorage.setItem('token','')
+      localStorage.setItem('userName','')
+      localStorage.setItem('user','invalid')
+      this.router.navigate(["/main/home"]).then(()=>{
+        window.location.reload()
+      });
+      
     }
 }

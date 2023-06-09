@@ -1,14 +1,15 @@
 .example-card {
-    max-width: 600px;
-  }
-  
-  .example-header-image {
-    background-image: url('https://assets-netstorage.groww.in/mf-assets/logos/iti_groww.png');
-    background-size: cover;
-  }
-  
-  .example-button-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-  }
+  max-width: 600px;
+}
+.example-header-image {
+  background-image: url('https://assets-netstorage.groww.in/mf-assets/logos/iti_groww.png');
+  background-size: cover;
+}
+.example-button-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.maindiv{
+  padding:  48px 78px 78px 78px;
+}

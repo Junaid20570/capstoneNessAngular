@@ -1,3 +1,6 @@
 .example-card {
-    max-width: 600px;
-  }
+  max-width: 600px;
+}
+.maindiv{
+  padding: 48px 78px 78px;
+}

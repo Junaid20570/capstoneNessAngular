@@ -1,0 +1,14 @@
+img{
+    height: 60vh;
+}
+.error{
+    display: flex;
+    justify-content: center;
+    &_body{
+        background-color: rgb(255, 224, 229);
+    }
+    &_2{
+        z-index: -3;
+        margin-top: -4rem;
+    }
+}

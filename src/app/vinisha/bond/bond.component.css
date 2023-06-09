@@ -1,4 +1,4 @@
-  .example-card {
+  /* .example-card {
     width: 400px;
     left:150px
   }
@@ -17,4 +17,33 @@
     display: inline-block;
     resize: both;
   }
-  
+   */
+   .cards{
+    padding: 0 0 0 12rem;
+   }
+   .card_btn{
+    margin: 0 0 0 1rem;
+  }
+   .example-card {
+    width: 400px;
+    /* left:150px; */
+    padding: 1rem;
+    box-shadow: 0px 0px 10px 0px #9B9B9B,
+        0 1px 1px 0 #9B9B9B,
+        0 1px 3px 0 #9B9B9B;
+  }
+  .example-header-image {
+    background-image: url('https://th.bing.com/th/id/OIP.n0SO4VxK3mXPQJ6ujXMzNAHaE7?w=285&h=190&c=7&r=0&o=5&dpr=1.5&pid=1.7');
+    background-size: cover;
+  }
+  .example-button-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  div {
+    margin: 10px;
+    padding: 0.1%;
+    display: inline-block;
+    resize: both;
+  }

@@ -7,4 +7,5 @@ export class StockApi{
     volume: number=0
     //extra
     stockName:string=''
+    symbol: string=''
 }

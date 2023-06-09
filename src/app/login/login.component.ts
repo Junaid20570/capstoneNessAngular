@@ -35,12 +35,15 @@ export class LoginComponent {
           localStorage.setItem('token',JSON.parse(JSON.stringify(data)))
           this.registerService.loginCustomer(data,this.loginUser).subscribe(
             loginData=>{
-              this.router.navigate(["/main/home"]);
-              LoginComponent.validUser="valid";
+              // LoginComponent.validUser="valid";
               localStorage.setItem('userName',loginData.email);
               localStorage.setItem('user','valid');
-            }
-          )         
+              this.router.navigate(["/main/home"]).then(()=>{
+                window.location.reload()
+              });
+              // window.location.reload()
+            } 
+          )
         }else{
           alert("user Not found - login");
         }
@@ -49,5 +52,6 @@ export class LoginComponent {
         console.log(error) ; 
       }
     )
+    
   }
 }

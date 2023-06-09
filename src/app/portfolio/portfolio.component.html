@@ -1,6 +1,10 @@
 <!-- stocks -->
 
 <div class="stock_table" >
+  <div [ngStyle]="{'color': (purStocks[indx].close<stockCurPrice) ? 'red' : 'green'}" >
+    <b>{{purStocks[indx].stockName}}</b><br>
+    <b>{{chnge}}</b>
+  </div>
   <h3 style="text-align: center; "><i>STOCKS</i></h3>
     <table class="table table-hover" >
         <thead>
@@ -9,7 +13,8 @@
             <th class="table-dark">Volume</th>
             <th class="table-dark">Open</th>
             <th class="table-dark">close</th>
-            <th class="table-dark">Change</th>
+            <th class="table-dark">Analyse</th>
+            <th class="table-dark">Sell</th>
         </thead>
         <tbody>
             <tr *ngFor="let item of purStocks; index as i">
@@ -18,7 +23,8 @@
               <td>{{item.volume}}</td>
               <td>{{item.open}}</td>
               <td>{{item.close}}</td>
-              <td [ngStyle]="{'color': (item.open<item.close) ? 'red' : 'green'}" ><b>{{item.open-item.close}}</b></td>
+              <td><button class="button btn-primary" (click)="analyse(item,i)" >Analyse</button></td>
+              <td><button class="button btn-primary" (click)="sellStock(item)" >Sell</button></td>
             </tr>
           </tbody>
     </table>
@@ -36,6 +42,7 @@
             <th class="table-dark">frequency</th>
             <th class="table-dark">taxable</th>
             <th class="table-dark">volume</th>
+            <th class="table-dark">Sell</th>
         </thead>
         <tbody>
             <tr *ngFor="let item of purBonds; index as i">
@@ -48,6 +55,7 @@
               <td>{{item.taxable}}</td>
               <td>{{item.volume}}</td>
               <!-- <td [ngStyle]="{'color': (item.open<item.close) ? 'red' : 'green'}" ><b>{{item.open-item.close}}</b></td> -->
+              <td><button class="button btn-primary" (click)="sellBond(item)" >Sell</button></td>
             </tr>
           </tbody>
     </table>
@@ -65,6 +73,7 @@
             <th class="table-dark">amount</th>
             <th class="table-dark">category</th>
             <th class="table-dark">volume</th>
+            <th class="table-dark">Sell</th>
         </thead>
         <tbody>
             <tr *ngFor="let item of purFund; index as i">
@@ -77,6 +86,7 @@
               <td>{{item.category}}</td>
               <td>{{item.volume}}</td>
               <!-- <td [ngStyle]="{'color': (item.open<item.close) ? 'red' : 'green'}" ><b>{{item.open-item.close}}</b></td> -->
+              <td><button class="button btn-primary" (click)="sellFund(item)" >Sell</button></td>
             </tr>
           </tbody>
     </table>
@@ -92,6 +102,7 @@
             <th class="table-dark">previous price</th>
             <th class="table-dark">Volume</th>
             <th class="table-dark">Change</th>
+            <th class="table-dark">Sell</th>
         </thead>
         <tbody>
             <tr *ngFor="let item of purCommodities; index as i">
@@ -101,6 +112,7 @@
               <td>{{item.previousPrice}}</td>
               <td>{{item.volume}}</td>
               <td [ngStyle]="{'color': (item.currentPrice<item.previousPrice) ? 'red' : 'green'}" ><b>{{item.currentPrice-item.previousPrice}}</b></td>
+              <td><button class="button btn-primary" (click)="sellCom(item)" >Sell</button></td>
             </tr>
           </tbody>
     </table>
@@ -118,6 +130,7 @@
             <th class="table-dark">Location</th>
             <th class="table-dark">current price</th>
             <th class="table-dark">previous price</th>
+            <th class="table-dark">Sell</th>
         </thead>
         <tbody>
             <tr *ngFor="let item of purRealEstate; index as i">
@@ -129,6 +142,7 @@
               <td>{{item.currentPrice}}</td>
               <td>{{item.previousPrice}}</td>
               <!-- <td [ngStyle]="{'color': (item.open<item.close) ? 'red' : 'green'}" ><b>{{item.open-item.close}}</b></td> -->
+              <td><button class="button btn-primary" (click)="sellRE(item)" >Sell</button></td>
             </tr>
           </tbody>
     </table>

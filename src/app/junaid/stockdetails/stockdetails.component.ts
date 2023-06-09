@@ -13,9 +13,9 @@ export class StockdetailsComponent {
   pagination: number=0;
   siNo: number=0;
   change :number=10;
-
+  // static curPrice:number
   constructor(private _serv:StockService){}
-  
+  usr:string=''
   stockApi:StockApi[]=[]
   stockApiDay:StockApi[]=[]
   buyStocks:StockApi[]=[]
@@ -26,7 +26,11 @@ export class StockdetailsComponent {
   ngOnInit(){
     this.symbol=sessionStorage.getItem('sym')
     let n=sessionStorage.getItem('name')
-    if(n!=null){
+    let user=localStorage.getItem('user')
+    if(user!=null){
+      this.usr=user
+    }
+    if(n!=null ){
       this.name=n
       console.log(this.name)
     }
@@ -34,13 +38,18 @@ export class StockdetailsComponent {
     this._serv.getApi(this.symbol).subscribe(data=>{
       this.stockApi=JSON.parse(JSON.stringify( data.values))
       this.buyStocks=this.stockApi
+      // StockdetailsComponent.curPrice=this.buyStocks[0].close
+      // console.log('curent price is '+this.buyStocks[0].close)
       console.log(this.stockApi)
       this.view()
-    })
+    })    
   } 
   }
   buyStock(){
     let item=this.buyStocks[0]
+    if(this.symbol!=null){
+      item.symbol=this.symbol
+    }
     console.log(item.datetime)
     let dt=JSON.stringify(item.datetime).replace(" ","T")
     console.log(dt)

@@ -2,7 +2,7 @@
     display: flex;
     padding: 0;
     &_image{
-        width: 12.8rem;
+        width: 13.8rem;
         height: 25rem;
         &_img{
             width: 100%;
@@ -22,17 +22,19 @@
     top: .3rem;
     right: .3rem;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.login{
+    margin: 2rem 0;
+    // display: flex;
+    // justify-content: center;
+    &_text{
+        color: rgb(190, 46, 91);
+        text-align: center;
+        margin: 3rem 0 2rem;
+        font-size: 2.3rem;
+        font-family: 'Ubuntu', sans-serif;
+    }
+    &_img{
+        height: 23rem;
+        text-align: center;
+    }
+}

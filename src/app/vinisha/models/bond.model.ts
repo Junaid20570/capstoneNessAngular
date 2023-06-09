@@ -1,10 +1,10 @@
 export class Bond{
     bondId:number=0;
-    bondName:String='';
-    tenure:String='';
+    bondName:string='';
+    tenure:string='';
     price:number=0;
-    ytm:String='';//(Yield To Maturity)
-    frequency:String='';
-    taxable:String='';
+    ytm:string='';//(Yield To Maturity)
+    frequency:string='';
+    taxable:string='';
     volume:any;
 }

@@ -1,3 +1,4 @@
+@import '../../styles.scss';
 .register_link{
     font-size: .9rem;
     position: absolute;
@@ -6,4 +7,7 @@
 .forgot_link{
     font-size: .8rem;
     margin-left: .6rem;
+}
+.links{
+    color: $primary-color;
 }
